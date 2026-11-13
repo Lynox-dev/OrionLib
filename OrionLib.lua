@@ -12,10 +12,10 @@ local Library = {
 	Flags = {},
 	Themes = {
 		Default = {
-			Main = Color3.fromRGB(50, 0, 50),   
-			Second = Color3.fromRGB(75, 0, 75),   
-			Stroke = Color3.fromRGB(60, 60, 65),   
-			Divider = Color3.fromRGB(40, 40, 45),
+			Main = Color3.fromRGB(25, 0, 25),   
+			Second = Color3.fromRGB(50, 0, 50),   
+			Stroke = Color3.fromRGB(25, 0, 25),   
+			Divider = Color3.fromRGB(25, 0, 25),
 			Text = Color3.fromRGB(240, 240, 245),
 			TextDark = Color3.fromRGB(160, 160, 165) 
 		}
