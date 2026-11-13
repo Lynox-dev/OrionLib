@@ -16,8 +16,8 @@ local Library = {
 			Second = Color3.fromRGB(50, 0, 50),   
 			Stroke = Color3.fromRGB(25, 0, 25),   
 			Divider = Color3.fromRGB(25, 0, 25),
-			Text = Color3.fromRGB(240, 240, 245),
-			TextDark = Color3.fromRGB(160, 160, 165) 
+			Text = Color3.fromRGB(0, 0, 0),
+			TextDark = Color3.fromRGB(0, 0, 0) 
 		}
 	},
 	SelectedTheme = "Default",
@@ -262,7 +262,7 @@ end)
 
 CreateElement("TFrame", function()
 	local TFrame = Create("Frame", {
-		BackgroundTransparency = 1
+		BackgroundTransparency = 0.85
 	})
 	return TFrame
 end)
@@ -291,7 +291,7 @@ CreateElement("Button", function()
 	local Button = Create("TextButton", {
 		Text = "",
 		AutoButtonColor = false,
-		BackgroundTransparency = 1,
+		BackgroundTransparency = 0.85,
 		BorderSizePixel = 0
 	})
 	return Button
@@ -299,7 +299,7 @@ end)
 
 CreateElement("ScrollFrame", function(Color, Width)
 	local ScrollFrame = Create("ScrollingFrame", {
-		BackgroundTransparency = 1,
+		BackgroundTransparency = 0.85,
 		MidImage = "rbxassetid://7445543667",
 		BottomImage = "rbxassetid://7445543667",
 		TopImage = "rbxassetid://7445543667",
@@ -314,7 +314,7 @@ end)
 CreateElement("Image", function(ImageID)
 	local ImageNew = Create("ImageLabel", {
 		Image = ImageID,
-		BackgroundTransparency = 1
+		BackgroundTransparency = 0.85
 	})
 
 	if GetIcon(ImageID) ~= nil then
@@ -340,7 +340,7 @@ CreateElement("Label", function(Text, TextSize, Transparency)
 		TextSize = TextSize or 15,
 		Font = Enum.Font.GothamSemibold,
 		RichText = true,
-		BackgroundTransparency = 1,
+		BackgroundTransparency = 0.85,
 		TextXAlignment = Enum.TextXAlignment.Left
 	})
 	return Label
@@ -377,7 +377,7 @@ function Library:MakeNotification(NotificationConfig)
 			Parent = NotificationParent, 
 			Size = UDim2.new(1, 0, 0, 0),
 			Position = UDim2.new(1, -55, 0, 0),
-			BackgroundTransparency = 0,
+			BackgroundTransparency = 0.85,
 			AutomaticSize = Enum.AutomaticSize.Y
 		}), {
 			MakeElement("Stroke", Color3.fromRGB(93, 93, 93), 1.2),
@@ -405,10 +405,10 @@ function Library:MakeNotification(NotificationConfig)
 		})
 		TweenService:Create(NotificationFrame, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {Position = UDim2.new(0, 0, 0, 0)}):Play()
 		wait(NotificationConfig.Time - 0.88)
-		TweenService:Create(NotificationFrame.Icon, TweenInfo.new(0.4, Enum.EasingStyle.Quint), {ImageTransparency = 1}):Play()
+		TweenService:Create(NotificationFrame.Icon, TweenInfo.new(0.4, Enum.EasingStyle.Quint), {ImageTransparency = 0.85}):Play()
 		TweenService:Create(NotificationFrame, TweenInfo.new(0.8, Enum.EasingStyle.Quint), {BackgroundTransparency = 0.6}):Play()
 		wait(0.3)
-		TweenService:Create(NotificationFrame.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {Transparency = 0.9}):Play()
+		TweenService:Create(NotificationFrame.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {Transparency = 0.85}):Play()
 		TweenService:Create(NotificationFrame.Title, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {TextTransparency = 0.4}):Play()
 		TweenService:Create(NotificationFrame.Content, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {TextTransparency = 0.5}):Play()
 		wait(0.05)
@@ -476,7 +476,7 @@ function Library:MakeWindow(WindowConfig)
 	local CloseBtn = SetChildren(SetProps(MakeElement("Button"), {
 		Size = UDim2.new(0.5, 0, 1, 0),
 		Position = UDim2.new(0.5, 0, 0, 0),
-		BackgroundTransparency = 1
+		BackgroundTransparency = 0.85
 	}), {
 		AddThemeObject(SetProps(MakeElement("Image", "rbxassetid://7072725342"), {
 			Position = UDim2.new(0, 9, 0, 6),
@@ -486,7 +486,7 @@ function Library:MakeWindow(WindowConfig)
 
 	local MinimizeBtn = SetChildren(SetProps(MakeElement("Button"), {
 		Size = UDim2.new(0.5, 0, 1, 0),
-		BackgroundTransparency = 1
+		BackgroundTransparency = 0.85
 	}), {
 		AddThemeObject(SetProps(MakeElement("Image", "rbxassetid://7072719338"), {
 			Position = UDim2.new(0, 9, 0, 6),
@@ -680,7 +680,7 @@ function Library:MakeWindow(WindowConfig)
 			Position = UDim2.new(0.5, 0, 0.4, 0),
 			Size = UDim2.new(0, 28, 0, 28),
 			ImageColor3 = Color3.fromRGB(255, 255, 255),
-			ImageTransparency = 1
+			ImageTransparency = 0.85
 		})
 
 		local LoadSequenceText = SetProps(MakeElement("Label", WindowConfig.IntroText, 14), {
@@ -690,7 +690,7 @@ function Library:MakeWindow(WindowConfig)
 			Position = UDim2.new(0.5, 19, 0.5, 0),
 			TextXAlignment = Enum.TextXAlignment.Center,
 			Font = Enum.Font.GothamBold,
-			TextTransparency = 1
+			TextTransparency = 0.85
 		})
 
 		TweenService:Create(LoadSequenceLogo, TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {ImageTransparency = 0, Position = UDim2.new(0.5, 0, 0.5, 0)}):Play()
@@ -699,7 +699,7 @@ function Library:MakeWindow(WindowConfig)
 		wait(0.3)
 		TweenService:Create(LoadSequenceText, TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {TextTransparency = 0}):Play()
 		wait(2)
-		TweenService:Create(LoadSequenceText, TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {TextTransparency = 1}):Play()
+		TweenService:Create(LoadSequenceText, TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {TextTransparency = 0.85}):Play()
 		MainWindow.Visible = true
 		LoadSequenceLogo:Destroy()
 		LoadSequenceText:Destroy()
@@ -1164,7 +1164,7 @@ TweenService:Create(TabFrame.Title, TweenInfo.new(0.25, Enum.EasingStyle.Quint, 
 						}), {
 							Parent = DropdownContainer,
 							Size = UDim2.new(1, 0, 0, 28),
-							BackgroundTransparency = 1,
+							BackgroundTransparency = 0.85,
 							ClipsDescendants = true
 						}), "Divider")
 
@@ -1194,8 +1194,8 @@ TweenService:Create(TabFrame.Title, TweenInfo.new(0.25, Enum.EasingStyle.Quint, 
 						Dropdown.Value = "..."
 						DropdownFrame.F.Selected.Text = Dropdown.Value
 						for _, v in pairs(Dropdown.Buttons) do
-							TweenService:Create(v,TweenInfo.new(.15, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{BackgroundTransparency = 1}):Play()
-							TweenService:Create(v.Title,TweenInfo.new(.15, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{TextTransparency = 0.4}):Play()
+							TweenService:Create(v,TweenInfo.new(.15, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{BackgroundTransparency = 0.85}):Play()
+							TweenService:Create(v.Title,TweenInfo.new(.15, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{TextTransparency = 0.85}):Play()
 						end	
 						return
 					end
@@ -1204,8 +1204,8 @@ TweenService:Create(TabFrame.Title, TweenInfo.new(0.25, Enum.EasingStyle.Quint, 
 					DropdownFrame.F.Selected.Text = Dropdown.Value
 
 					for _, v in pairs(Dropdown.Buttons) do
-						TweenService:Create(v,TweenInfo.new(.15, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{BackgroundTransparency = 1}):Play()
-						TweenService:Create(v.Title,TweenInfo.new(.15, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{TextTransparency = 0.4}):Play()
+						TweenService:Create(v,TweenInfo.new(.15, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{BackgroundTransparency = 0.85}):Play()
+						TweenService:Create(v.Title,TweenInfo.new(.15, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{TextTransparency = 0.85}):Play()
 					end	
 					TweenService:Create(Dropdown.Buttons[Value],TweenInfo.new(.15, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{BackgroundTransparency = 0}):Play()
 					TweenService:Create(Dropdown.Buttons[Value].Title,TweenInfo.new(.15, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{TextTransparency = 0}):Play()
@@ -1364,7 +1364,7 @@ TweenService:Create(TabFrame.Title, TweenInfo.new(0.25, Enum.EasingStyle.Quint, 
 
 				local TextboxActual = AddThemeObject(Create("TextBox", {
 					Size = UDim2.new(1, 0, 1, 0),
-					BackgroundTransparency = 1,
+					BackgroundTransparency = 0.85,
 					TextColor3 = Color3.fromRGB(255, 255, 255),
 					PlaceholderColor3 = Color3.fromRGB(210,210,210),
 					PlaceholderText = "Input",
@@ -1445,7 +1445,7 @@ TweenService:Create(TabFrame.Title, TweenInfo.new(0.25, Enum.EasingStyle.Quint, 
 					Position = UDim2.new(select(3, Color3.toHSV(Colorpicker.Value))),
 					ScaleType = Enum.ScaleType.Fit,
 					AnchorPoint = Vector2.new(0.5, 0.5),
-					BackgroundTransparency = 1,
+					BackgroundTransparency = 0.85,
 					Image = "http://www.roblox.com/asset/?id=4805639000"
 				})
 
@@ -1454,7 +1454,7 @@ TweenService:Create(TabFrame.Title, TweenInfo.new(0.25, Enum.EasingStyle.Quint, 
 					Position = UDim2.new(0.5, 0, 1 - select(1, Color3.toHSV(Colorpicker.Value))),
 					ScaleType = Enum.ScaleType.Fit,
 					AnchorPoint = Vector2.new(0.5, 0.5),
-					BackgroundTransparency = 1,
+					BackgroundTransparency = 0.85,
 					Image = "http://www.roblox.com/asset/?id=4805639000"
 				})
 
@@ -1480,7 +1480,7 @@ TweenService:Create(TabFrame.Title, TweenInfo.new(0.25, Enum.EasingStyle.Quint, 
 				local ColorpickerContainer = Create("Frame", {
 					Position = UDim2.new(0, 0, 0, 32),
 					Size = UDim2.new(1, 0, 1, -32),
-					BackgroundTransparency = 1,
+					BackgroundTransparency = 0.85,
 					ClipsDescendants = true
 				}, {
 					Hue,
@@ -1766,7 +1766,7 @@ local Menu_Notifi = Create("Frame", ScreenGui, {
   Size = UDim2.new(0, 300, 1, 0),
   Position = UDim2.new(1, 0, 0, 0),
   AnchorPoint = Vector2.new(1, 0),
-  BackgroundTransparency = 1
+  BackgroundTransparency = 0.85
 })
 
 local Padding = Create("UIPadding", Menu_Notifi, {
@@ -1787,7 +1787,7 @@ function Library:MakeNotifi(Configs)
   
   local Frame1 = Create("Frame", Menu_Notifi, {
     Size = UDim2.new(2, 0, 0, 0),
-    BackgroundTransparency = 1,
+    BackgroundTransparency = 0.85,
     AutomaticSize = "Y",
     Name = "Title"
   })
@@ -1802,7 +1802,7 @@ function Library:MakeNotifi(Configs)
   local TextLabel = Create("TextLabel", Frame2, {
     Size = UDim2.new(1, 0, 0, 25),
     Font = Configs_HUB.Text_Font,
-    BackgroundTransparency = 1,
+    BackgroundTransparency = 0.85,
     Text = Title,
     TextSize = 20,
     Position = UDim2.new(0, 20, 0, 5),
@@ -1814,7 +1814,7 @@ function Library:MakeNotifi(Configs)
     Text = "X",
     Font = Configs_HUB.Text_Font,
     TextSize = 20,
-    BackgroundTransparency = 1,
+    BackgroundTransparency = 0.85,
     TextColor3 = Color3.fromRGB(200, 200, 200),
     Position = UDim2.new(1, -5, 0, 5),
     AnchorPoint = Vector2.new(1, 0),
@@ -1831,7 +1831,7 @@ function Library:MakeNotifi(Configs)
     AutomaticSize = "Y",
     Text = text,
     Font = Configs_HUB.Text_Font,
-    BackgroundTransparency = 1,
+    BackgroundTransparency = 0.85,
     AutomaticSize = Enum.AutomaticSize.Y,
     TextWrapped = true
   })
@@ -1844,7 +1844,7 @@ function Library:MakeNotifi(Configs)
   })Corner(FrameSize)Create("Frame", Frame2, {
     Size = UDim2.new(0, 0, 0, 5),
     Position = UDim2.new(0, 0, 1, 5),
-    BackgroundTransparency = 1
+    BackgroundTransparency = 0.85
   })
   
   task.spawn(function()
